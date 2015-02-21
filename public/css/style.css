@@ -1,0 +1,22 @@
+#message {
+	margin:-100px 0 0 -150px;	width: 750px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top: 65%;
+}
+
+#mydad {
+	color: blue;
+	font-size: 4em;
+	font-family: helvetica;
+}
+
+#rest {
+	font-size: 2em;
+	font-family: helvetica;
+}
+
+.link {
+	font-size: 1em;
+}
