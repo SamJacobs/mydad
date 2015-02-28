@@ -1,22 +1,46 @@
+@font-face {
+    font-family: 'Arvo';
+    src: url('Arvo/Arvo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans/OpenSans-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 #message {
-	margin:-100px 0 0 -150px;	width: 750px;
-	height: 200px;
-	position: absolute;
-	left: 50%;
-	top: 55%;
+	width: 50%;
+	position: relative;
+	left: 25%;
+	top: 30%;
 }
 
 #mydad {
 	color: blue;
-	font-size: 4em;
-	font-family: helvetica;
+	width: 300px;
+	font-size: 5em;
+	font-family: 'Arvo';
+	font-weight: normal;
+	font-style: normal;
+	margin-right: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #rest {
+	padding-left: 300px;
 	font-size: 2em;
-	font-family: helvetica;
+	font-family: "Open Sans";
+	font-weight: normal;
+	text-transform: lowercase;
 }
 
-.link {
-	font-size: 1em;
+#rest a {
+	color: orange;
 }
