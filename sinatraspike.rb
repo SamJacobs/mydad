@@ -1,22 +1,27 @@
 require 'rubygems'
 require 'sinatra'
+require 'uri'
 require 'rest-client'
+require 'base64'
+require 'twitter'
 
-require_relative 'info.rb'
+require_relative 'info'
 
-# = @consumer_key
-# = @consumer_secr
-# = @oauth_token
-# = @oauth_token_s
-# = @auth_method
+$client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = $consumer_key
+  config.consumer_secret     =  $consumer_secret
+end
+
+$auth_method        = :oauth
 
 get '/' do
   erb :mydad
 end
 
-
-# RestClient.get 'http://example.com/resource', {:params => {:id => 50, 'foo' => 'bar'}}
-
 get '/more' do
-
+	$client.search("'my dad'", result_type: "recent").each do |tweet|
+		if tweet.text =~ /\Amy\sdad\s/i
+    		return tweet.text[7...tweet.text.length]
+    	end
+	end
 end
