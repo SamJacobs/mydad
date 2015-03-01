@@ -6,11 +6,18 @@ require 'base64'
 require 'twitter'
 require 'htmlentities'
 
-require_relative 'info'
+
 
 $client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = $consumer_key
+	if ENV['RACK_ENV'] == 'production'
+	config.consumer_key        = ENV['API_KEY']
+  config.consumer_secret     =  ENV['API_SECRET']
+	else
+	require_relative 'info'
+	config.consumer_key        = $consumer_key
   config.consumer_secret     =  $consumer_secret
+	end
+ 
 end
 
 encoding_options = {
